@@ -37,6 +37,17 @@
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
+        /* Styles for scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="bg-[var(--background)] text-[var(--on-background)]">
@@ -91,13 +102,13 @@
     <!-- Features Section -->
     <section id="features" class="py-24 bg-[var(--surface-low)]">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 scroll-animate">
                 <h3 class="text-4xl font-bold text-[var(--on-background)] mb-3">Why You'll Love StayGreen</h3>
                 <p class="text-lg text-[var(--on-surface-variant)]">Everything you need to keep your digital presence active and secure.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)]">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)] scroll-animate">
                     <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="mouse-pointer-2" class="w-8 h-8"></i>
                     </div>
@@ -105,7 +116,7 @@
                     <p class="text-[var(--on-surface-variant)]">Generates human-like mouse movements and typing that communication apps recognize as genuine activity, keeping your status green.</p>
                 </div>
                 <!-- Feature 2 -->
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)]">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)] scroll-animate" style="transition-delay: 100ms;">
                     <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="sliders-horizontal" class="w-8 h-8"></i>
                     </div>
@@ -113,7 +124,7 @@
                     <p class="text-[var(--on-surface-variant)]">Fine-tune everything. Adjust action delays, typo rates, text profiles, and mouse behavior to fit your needs.</p>
                 </div>
                 <!-- Feature 3 -->
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)]">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)] scroll-animate" style="transition-delay: 200ms;">
                     <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="zap" class="w-8 h-8"></i>
                     </div>
@@ -121,7 +132,7 @@
                     <p class="text-[var(--on-surface-variant)]">Unlock advanced features like action clustering, custom Bluetooth device names, and undetectable simulation patterns.</p>
                 </div>
                 <!-- Feature 4 -->
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)]">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)] scroll-animate">
                     <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="bluetooth" class="w-8 h-8"></i>
                     </div>
@@ -129,7 +140,7 @@
                     <p class="text-[var(--on-surface-variant)]">Works as a standard Bluetooth Keyboard/Mouse. No drivers or special software needed on your host computer (PC, Mac, Linux).</p>
                 </div>
                 <!-- Feature 5 -->
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)]">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)] scroll-animate" style="transition-delay: 100ms;">
                     <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="shield-check" class="w-8 h-8"></i>
                     </div>
@@ -137,7 +148,7 @@
                     <p class="text-[var(--on-surface-variant)]">Runs 100% locally on your phone. It doesn't read your screen or require invasive permissions. Your data stays yours.</p>
                 </div>
                 <!-- Feature 6 -->
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)]">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--surface-variant)] scroll-animate" style="transition-delay: 200ms;">
                     <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="battery-charging" class="w-8 h-8"></i>
                     </div>
@@ -151,27 +162,27 @@
     <!-- How It Works Section -->
     <section id="how-it-works" class="py-24 bg-[var(--background)]">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 scroll-animate">
                 <h3 class="text-4xl font-bold text-[var(--on-background)] mb-3">Get Started in Three Easy Steps</h3>
                 <p class="text-lg text-[var(--on-surface-variant)]">No complex setup. Just pair and go.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <!-- Step 1 -->
-                <div class="relative px-4">
+                <div class="relative px-4 scroll-animate">
                     <div class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
                     <h4 class="text-xl font-semibold mb-2 text-[var(--on-background)]">Install & Open</h4>
                     <p class="text-[var(--on-surface-variant)]">Download StayGreen from the Google Play Store and open it on your Android device.</p>
-                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--surface-variant)]" style="transform: translateX(50%);"></div>
+                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--outline)] opacity-50" style="transform: translateX(50%);"></div>
                 </div>
                 <!-- Step 2 -->
-                <div class="relative px-4">
+                <div class="relative px-4 scroll-animate" style="transition-delay: 150ms;">
                      <div class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
                     <h4 class="text-xl font-semibold mb-2 text-[var(--on-background)]">Pair via Bluetooth</h4>
                     <p class="text-[var(--on-surface-variant)]">Enable advertising in the app and pair your phone with your computer just like any Bluetooth device.</p>
-                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--surface-variant)]" style="transform: translateX(50%);"></div>
+                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--outline)] opacity-50" style="transform: translateX(50%);"></div>
                 </div>
                 <!-- Step 3 -->
-                <div class="relative px-4">
+                <div class="relative px-4 scroll-animate" style="transition-delay: 300ms;">
                      <div class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
                     <h4 class="text-xl font-semibold mb-2 text-[var(--on-background)]">Start Activity</h4>
                     <p class="text-[var(--on-surface-variant)]">Press the "Start Activity" button. Your computer now sees an active user. That's it!</p>
@@ -183,25 +194,15 @@
     <!-- Use Cases Section -->
     <section id="use-cases" class="py-24 bg-[var(--surface-low)]">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 scroll-animate">
                 <h3 class="text-4xl font-bold text-[var(--on-background)] mb-3">Perfect For...</h3>
                 <p class="text-lg text-[var(--on-surface-variant)]">Anyone who needs their computer to stay awake and active.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--surface-variant)]">
+            <div class="flex justify-center">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--surface-variant)] max-w-lg scroll-animate">
                     <i data-lucide="briefcase" class="w-10 h-10 text-[var(--primary)] mb-4"></i>
                     <h4 class="text-xl font-bold mb-2 text-[var(--on-surface)]">Maintaining Your Green Status</h4>
                     <p class="text-[var(--on-surface-variant)]">Effortlessly keep your status "Active" on Slack, Microsoft Teams, and other platforms. StayGreen ensures you appear online, giving you the freedom to step away without worrying about your status changing.</p>
-                </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--surface-variant)]">
-                    <i data-lucide="presentation" class="w-10 h-10 text-[var(--primary)] mb-4"></i>
-                    <h4 class="text-xl font-bold mb-2 text-[var(--on-surface)]">Presenters & Educators</h4>
-                    <p class="text-[var(--on-surface-variant)]">Deliver your presentation or online class without the screen dimming or locking during a Q&A session.</p>
-                </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--surface-variant)]">
-                    <i data-lucide="code-2" class="w-10 h-10 text-[var(--primary)] mb-4"></i>
-                    <h4 class="text-xl font-bold mb-2 text-[var(--on-surface)]">Developers & IT Pros</h4>
-                    <p class="text-[var(--on-surface-variant)]">Ensure long-running scripts, downloads, or data transfers complete without being interrupted by sleep mode.</p>
                 </div>
             </div>
         </div>
@@ -210,7 +211,7 @@
 
     <!-- CTA Section -->
     <section class="gradient-bg">
-        <div class="container mx-auto px-6 py-24 text-center">
+        <div class="container mx-auto px-6 py-24 text-center scroll-animate">
             <h3 class="text-4xl font-bold text-[var(--on-background)] mb-4">Ready to Take Control?</h3>
             <p class="text-lg text-[var(--on-surface-variant)] max-w-2xl mx-auto mb-8">Download StayGreen today and say goodbye to unwanted screen locking and yellow status indicators. Boost your productivity and maintain your active status effortlessly.</p>
             <a href="#" class="bg-[var(--primary)] hover:bg-[var(--on-primary-container)] text-[var(--on-primary)] hover:text-[var(--on-primary)] font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2 text-lg">
@@ -234,7 +235,41 @@
 
 
     <script>
+        // Initialize Lucide Icons
         lucide.createIcons();
+
+        // JavaScript for Scroll Animations using Intersection Observer API
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+
+            // If the browser doesn't support IntersectionObserver, make all elements visible
+            if (!('IntersectionObserver' in window)) {
+                scrollElements.forEach(element => {
+                    element.classList.add('is-visible');
+                });
+                return;
+            }
+            
+            // Create the observer
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // If the element is in the viewport, add the 'is-visible' class
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Stop observing the element so the animation only happens once
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                // Trigger the animation when the element is 10% visible
+                threshold: 0.1 
+            });
+
+            // Observe each element
+            scrollElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
     </script>
 </body>
 </html>
