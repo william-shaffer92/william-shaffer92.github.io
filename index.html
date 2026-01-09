@@ -1,9 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StayGreen - Keep Your Status Green</title>
+    <title>StayGreen - Mouse Jiggler & Active Status Keeper</title>
+    <meta name="description"
+        content="Keep your Teams, Slack, and computer status green with StayGreen. The ultimate hardware-free mouse jiggler app that runs via Bluetooth from your phone.">
+    <meta name="keywords"
+        content="mouse jiggler, keep awake, prevent computer sleep, active status, teams green status, slack always active, bluetooth mouse simulator, android utility">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://staygreen.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://staygreen.app/">
+    <meta property="og:title" content="StayGreen - Detectable-Free Mouse Jiggler App">
+    <meta property="og:description"
+        content="Prevent yellow status and computer sleep. Simulate realistic mouse movement from your phone without installing software.">
+    <meta property="og:image" content="https://staygreen.app/appImage.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://staygreen.app/">
+    <meta property="twitter:title" content="StayGreen - Detectable-Free Mouse Jiggler">
+    <meta property="twitter:description"
+        content="Keep your work status active and prevent sleep mode with this hardware-free Bluetooth solution.">
+    <meta property="twitter:image" content="https://staygreen.app/appImage.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "StayGreen",
+      "operatingSystem": "Android",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A Bluetooth-based mouse jiggler app that simulates realistic mouse activity to keep computer status green and prevent sleep mode without installing software on the PC."
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,20 +63,25 @@
             --on-surface-variant: #C5C8BA;
             --outline: #8F9285;
         }
+
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
+
         .gradient-bg {
             background: linear-gradient(135deg, var(--surface-low), var(--background));
         }
+
         .feature-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .feature-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
+
         /* Styles for scroll animations */
         .scroll-animate {
             opacity: 0;
@@ -45,27 +89,37 @@
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
             will-change: opacity, transform;
         }
+
         .scroll-animate.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
+
 <body class="bg-[var(--background)] text-[var(--on-background)]">
 
     <header class="bg-[var(--surface)]/80 backdrop-blur-lg sticky top-0 z-50 border-b border-[var(--outline)]">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-3">
                 <div class="bg-[var(--primary)] p-2 rounded-full">
-                    <svg class="w-6 h-6 text-[var(--on-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    <svg class="w-6 h-6 text-[var(--on-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                        </path>
+                    </svg>
                 </div>
                 <h1 class="text-2xl font-bold text-[var(--on-surface)]">StayGreen</h1>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="#features" class="text-[var(--on-surface-variant)] hover:text-[var(--primary)] font-medium">Features</a>
-                <a href="#how-it-works" class="text-[var(--on-surface-variant)] hover:text-[var(--primary)] font-medium">How It Works</a>
+                <a href="#features"
+                    class="text-[var(--on-surface-variant)] hover:text-[var(--primary)] font-medium">Features</a>
+                <a href="#how-it-works"
+                    class="text-[var(--on-surface-variant)] hover:text-[var(--primary)] font-medium">How It Works</a>
                 <a href="#faq" class="text-[var(--on-surface-variant)] hover:text-[var(--primary)] font-medium">FAQ</a>
-                <a href="https://play.google.com/store/apps/details?id=com.shaffer.staygreen" class="bg-[var(--primary)] hover:bg-[var(--on-primary-container)] text-[var(--on-primary)] hover:text-[var(--on-primary)] font-bold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <a href="https://play.google.com/store/apps/details?id=com.shaffer.staygreen"
+                    class="bg-[var(--primary)] hover:bg-[var(--on-primary-container)] text-[var(--on-primary)] hover:text-[var(--on-primary)] font-bold py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                     Download
                 </a>
             </div>
@@ -76,25 +130,30 @@
         <section class="container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 text-center md:text-left">
                 <h2 class="text-4xl md:text-6xl font-extrabold text-[var(--on-background)] leading-tight mb-4">
-                    Keep Your Status Green.
-                    <span class="text-[var(--primary)]">And Your Screen Awake.</span>
+                    The Ultimate Hardware-Free
+                    <span class="text-[var(--primary)]">Mouse Jiggler App.</span>
                 </h2>
                 <p class="text-lg text-[var(--on-surface-variant)] mb-8 max-w-xl mx-auto md:mx-0">
-                    StayGreen keeps you 'Active' on Teams, Slack, and more by simulating realistic mouse and keyboard activity. Prevent your status from turning yellow and your computer from sleeping, all without installing any software on your work PC.
+                    StayGreen is a secure <strong>mouse jiggler</strong> that keeps you 'Active' on Teams, Slack, and
+                    Zoom by simulating realistic mouse and keyboard activity via Bluetooth. Prevent your status from
+                    turning yellow and your computer from sleeping—no dongles or PC software required.
                 </p>
                 <div class="flex justify-center md:justify-start space-x-4">
-                    <a href="https://play.google.com/store/apps/details?id=com.shaffer.staygreen" class="bg-[var(--primary)] hover:bg-[var(--on-primary-container)] text-[var(--on-primary)] hover:text-[var(--on-primary)] font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2">
+                    <a href="https://play.google.com/store/apps/details?id=com.shaffer.staygreen"
+                        class="bg-[var(--primary)] hover:bg-[var(--on-primary-container)] text-[var(--on-primary)] hover:text-[var(--on-primary)] font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2">
                         <i data-lucide="download"></i>
                         <span>Get on Google Play</span>
                     </a>
-                    <a href="#features" class="bg-[var(--surface)] hover:bg-[var(--surface-low)] text-[var(--on-surface)] font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2">
+                    <a href="#features"
+                        class="bg-[var(--surface)] hover:bg-[var(--surface-low)] text-[var(--on-surface)] font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2">
                         <i data-lucide="arrow-down-circle"></i>
                         <span>Learn More</span>
                     </a>
                 </div>
             </div>
             <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-               <img src="appImage.jpg" alt="StayGreen App Screenshot" class="rounded-2xl shadow-2xl w-[450px] h-[890px] object-cover">
+                <img src="appImage.jpg" alt="StayGreen Android App Interface showing active mouse jiggler status"
+                    class="rounded-2xl shadow-2xl w-[450px] h-[890px] object-cover">
             </div>
         </section>
     </main>
@@ -102,52 +161,76 @@
     <section id="features" class="py-24 bg-[var(--surface-low)]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 scroll-animate">
-                <h3 class="text-4xl font-bold text-[var(--on-background)] mb-3">Why You'll Love StayGreen</h3>
-                <p class="text-lg text-[var(--on-surface-variant)]">Everything you need to keep your digital presence active and secure.</p>
+                <h3 class="text-4xl font-bold text-[var(--on-background)] mb-3">Why Choose Our Bluetooth Mouse Jiggler?
+                </h3>
+                <p class="text-lg text-[var(--on-surface-variant)]">Everything you need to keep your digital presence
+                    active and secure.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate">
-                    <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                <article
+                    class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate">
+                    <div
+                        class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="mouse-pointer-2" class="w-8 h-8"></i>
                     </div>
-                    <h4 class="text-2xl font-bold mb-3 text-[var(--on-surface)]">Realistic Simulation</h4>
-                    <p class="text-[var(--on-surface-variant)]">Generates human-like mouse movements and typing that communication apps recognize as genuine activity, keeping your status green.</p>
-                </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate" style="transition-delay: 100ms;">
-                    <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                    <h4 class="text-2xl font-bold mb-3 text-[var(--on-surface)]">Realistic Mouse Movement</h4>
+                    <p class="text-[var(--on-surface-variant)]">Generates human-like mouse movements and typing that
+                        communication apps recognize as genuine activity, keeping your status green.</p>
+                </article>
+                <article
+                    class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="sliders-horizontal" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-2xl font-bold mb-3 text-[var(--on-surface)]">Fully Customizable</h4>
-                    <p class="text-[var(--on-surface-variant)]">Fine-tune everything. Adjust action delays, typo rates, text profiles, and mouse behavior to fit your needs.</p>
-                </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate" style="transition-delay: 200ms;">
-                    <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                    <p class="text-[var(--on-surface-variant)]">Fine-tune everything. Adjust action delays, typo rates,
+                        text profiles, and mouse behavior to fit your needs.</p>
+                </article>
+                <article
+                    class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="zap" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-2xl font-bold mb-3 text-[var(--on-surface)]">Pro Power-Ups</h4>
-                    <p class="text-[var(--on-surface-variant)]">Unlock advanced features like action clustering, custom Bluetooth device names, and undetectable simulation patterns.</p>
-                </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate">
-                    <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                    <p class="text-[var(--on-surface-variant)]">Unlock advanced features like action clustering, custom
+                        Bluetooth device names, and undetectable simulation patterns.</p>
+                </article>
+                <article
+                    class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate">
+                    <div
+                        class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="bluetooth" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-2xl font-bold mb-3 text-[var(--on-surface)]">Driverless Bluetooth HID</h4>
-                    <p class="text-[var(--on-surface-variant)]">Works as a standard Bluetooth Keyboard/Mouse. No drivers or special software needed on your host computer (PC, Mac, Linux).</p>
-                </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate" style="transition-delay: 100ms;">
-                    <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                    <p class="text-[var(--on-surface-variant)]">Works as a standard Bluetooth Keyboard/Mouse. No drivers
+                        or special software needed on your host computer (PC, Mac, Linux).</p>
+                </article>
+                <article
+                    class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate"
+                    style="transition-delay: 100ms;">
+                    <div
+                        class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="shield-check" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-2xl font-bold mb-3 text-[var(--on-surface)]">Privacy Focused</h4>
-                    <p class="text-[var(--on-surface-variant)]">Runs 100% locally on your phone. It doesn't read your screen or require invasive permissions. Your data stays yours.</p>
-                </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate" style="transition-delay: 200ms;">
-                    <div class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                    <p class="text-[var(--on-surface-variant)]">Runs 100% locally on your phone. It doesn't read your
+                        screen or require invasive permissions. Your data stays yours.</p>
+                </article>
+                <article
+                    class="bg-[var(--surface)] p-8 rounded-2xl feature-card border border-[var(--outline)]/50 scroll-animate"
+                    style="transition-delay: 200ms;">
+                    <div
+                        class="bg-[var(--primary-container)] text-[var(--on-primary-container)] w-16 h-16 rounded-full flex items-center justify-center mb-6">
                         <i data-lucide="battery-charging" class="w-8 h-8"></i>
                     </div>
                     <h4 class="text-2xl font-bold mb-3 text-[var(--on-surface)]">Energy Efficient</h4>
-                    <p class="text-[var(--on-surface-variant)]">Designed to be lightweight and run in the background with a persistent notification, using minimal battery.</p>
-                </div>
+                    <p class="text-[var(--on-surface-variant)]">Designed to be lightweight and run in the background
+                        with a persistent notification, using minimal battery.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -160,31 +243,43 @@
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="relative px-4 scroll-animate">
-                    <div class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
+                    <div
+                        class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                        1</div>
                     <h4 class="text-xl font-semibold mb-2 text-[var(--on-background)]">Install & Open</h4>
-                    <p class="text-[var(--on-surface-variant)]">Download StayGreen from the Google Play Store and open it on your Android device.</p>
-                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--outline)] opacity-50" style="transform: translateX(50%);"></div>
+                    <p class="text-[var(--on-surface-variant)]">Download StayGreen from the Google Play Store and open
+                        it on your Android device.</p>
+                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--outline)] opacity-50"
+                        style="transform: translateX(50%);"></div>
                 </div>
                 <div class="relative px-4 scroll-animate" style="transition-delay: 150ms;">
-                     <div class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
+                    <div
+                        class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                        2</div>
                     <h4 class="text-xl font-semibold mb-2 text-[var(--on-background)]">Pair via Bluetooth</h4>
-                    <p class="text-[var(--on-surface-variant)]">Enable advertising in the app and pair your phone with your computer just like any Bluetooth device.</p>
-                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--outline)] opacity-50" style="transform: translateX(50%);"></div>
+                    <p class="text-[var(--on-surface-variant)]">Enable advertising in the app and pair your phone with
+                        your computer just like any Bluetooth device.</p>
+                    <div class="hidden md:block absolute top-8 left-1/2 w-full h-0.5 bg-[var(--outline)] opacity-50"
+                        style="transform: translateX(50%);"></div>
                 </div>
                 <div class="relative px-4 scroll-animate" style="transition-delay: 300ms;">
-                     <div class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
+                    <div
+                        class="bg-[var(--primary)] text-[var(--on-primary)] w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">
+                        3</div>
                     <h4 class="text-xl font-semibold mb-2 text-[var(--on-background)]">Start Activity</h4>
-                    <p class="text-[var(--on-surface-variant)]">Press the "Start Activity" button. Your computer now sees an active user. That's it!</p>
+                    <p class="text-[var(--on-surface-variant)]">Press the "Start Activity" button. Your computer now
+                        sees an active user. That's it!</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
     <section id="use-cases" class="py-24 bg-[var(--surface-low)]">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 scroll-animate">
                 <h3 class="text-4xl font-bold text-[var(--on-background)] mb-3">Perfect For...</h3>
-                <p class="text-lg text-[var(--on-surface-variant)]">Anyone who needs to maintain their digital presence, without exception.</p>
+                <p class="text-lg text-[var(--on-surface-variant)]">Anyone who needs to maintain their digital presence,
+                    without exception.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--outline)]/50 scroll-animate">
@@ -192,28 +287,39 @@
                         <i data-lucide="home" class="w-10 h-10"></i>
                         <h4 class="ml-4 text-xl font-bold text-[var(--on-surface)]">Remote Workers & Deep Thinkers</h4>
                     </div>
-                    <p class="text-[var(--on-surface-variant)]">Stay present in chat apps while you're reading documents, brainstorming on a whiteboard, or just taking a moment to think, without your status prematurely switching to 'Away'.</p>
+                    <p class="text-[var(--on-surface-variant)]">Stay present in chat apps while you're reading
+                        documents, brainstorming on a whiteboard, or just taking a moment to think, without your status
+                        prematurely switching to 'Away'.</p>
                 </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--outline)]/50 scroll-animate" style="transition-delay: 100ms;">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--outline)]/50 scroll-animate"
+                    style="transition-delay: 100ms;">
                     <div class="flex items-center text-[var(--primary)] mb-4">
                         <i data-lucide="terminal-square" class="w-10 h-10"></i>
                         <h4 class="ml-4 text-xl font-bold text-[var(--on-surface)]">IT Professionals & Developers</h4>
                     </div>
-                    <p class="text-[var(--on-surface-variant)]">Keep your session active during long software compilations, data migrations, or while monitoring system logs. Avoid getting logged out or appearing idle during critical, low-interaction tasks.</p>
+                    <p class="text-[var(--on-surface-variant)]">Keep your session active during long software
+                        compilations, data migrations, or while monitoring system logs. Avoid getting logged out or
+                        appearing idle during critical, low-interaction tasks.</p>
                 </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--outline)]/50 scroll-animate" style="transition-delay: 200ms;">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--outline)]/50 scroll-animate"
+                    style="transition-delay: 200ms;">
                     <div class="flex items-center text-[var(--primary)] mb-4">
                         <i data-lucide="headset" class="w-10 h-10"></i>
                         <h4 class="ml-4 text-xl font-bold text-[var(--on-surface)]">Customer Support Agents</h4>
                     </div>
-                    <p class="text-[var(--on-surface-variant)]">Ensure you're always seen as 'Available' for the next customer interaction. Prevent your status from changing during brief post-call wrap-ups or while waiting for the next ticket.</p>
+                    <p class="text-[var(--on-surface-variant)]">Ensure you're always seen as 'Available' for the next
+                        customer interaction. Prevent your status from changing during brief post-call wrap-ups or while
+                        waiting for the next ticket.</p>
                 </div>
-                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--outline)]/50 scroll-animate" style="transition-delay: 300ms;">
+                <div class="bg-[var(--surface)] p-8 rounded-2xl border border-[var(--outline)]/50 scroll-animate"
+                    style="transition-delay: 300ms;">
                     <div class="flex items-center text-[var(--primary)] mb-4">
                         <i data-lucide="shield-alert" class="w-10 h-10"></i>
                         <h4 class="ml-4 text-xl font-bold text-[var(--on-surface)]">Bypassing Strict Idle Policies</h4>
                     </div>
-                    <p class="text-[var(--on-surface-variant)]">For users in corporate environments with aggressive idle timers that lock screens or change status too quickly. Regain control over your workflow and take short breaks without hassle.</p>
+                    <p class="text-[var(--on-surface-variant)]">For users in corporate environments with aggressive idle
+                        timers that lock screens or change status too quickly. Regain control over your workflow and
+                        take short breaks without hassle.</p>
                 </div>
             </div>
         </div>
@@ -223,13 +329,21 @@
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 scroll-animate">
                 <h3 class="text-4xl font-bold text-[var(--on-background)] mb-3">Unlock Your Productivity</h3>
-                <p class="text-lg text-[var(--on-surface-variant)]">Upgrade to Pro for advanced, undetectable simulations.</p>
+                <p class="text-lg text-[var(--on-surface-variant)]">Upgrade to Pro for advanced, undetectable
+                    simulations.</p>
             </div>
-            <div class="max-w-4xl mx-auto bg-[var(--surface)] rounded-2xl p-8 border border-[var(--outline)]/50 scroll-animate">
+            <div
+                class="max-w-4xl mx-auto bg-[var(--surface)] rounded-2xl p-8 border border-[var(--outline)]/50 scroll-animate">
                 <div class="grid grid-cols-3 gap-4 md:gap-8">
-                    <div class="text-left"><h4 class="text-xl md:text-2xl font-bold text-[var(--on-surface)]">Feature</h4></div>
-                    <div class="text-center"><h4 class="text-xl md:text-2xl font-bold text-[var(--on-surface)]">Free</h4></div>
-                    <div class="text-center"><span class="inline-block bg-[var(--primary-container)] text-[var(--on-primary-container)] font-bold py-1 px-3 rounded-full">PRO</span></div>
+                    <div class="text-left">
+                        <h4 class="text-xl md:text-2xl font-bold text-[var(--on-surface)]">Feature</h4>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-xl md:text-2xl font-bold text-[var(--on-surface)]">Free</h4>
+                    </div>
+                    <div class="text-center"><span
+                            class="inline-block bg-[var(--primary-container)] text-[var(--on-primary-container)] font-bold py-1 px-3 rounded-full">PRO</span>
+                    </div>
                 </div>
                 <div class="space-y-4 mt-6">
                     <div class="grid grid-cols-3 gap-4 md:gap-8 items-center border-t border-[var(--outline)]/50 pt-4">
@@ -244,22 +358,26 @@
                     </div>
                     <div class="grid grid-cols-3 gap-4 md:gap-8 items-center border-t border-[var(--outline)]/50 pt-4">
                         <div class="font-semibold text-base md:text-lg">Randomized Action Delays</div>
-                        <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i data-lucide="x-circle"></i></div>
+                        <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i
+                                data-lucide="x-circle"></i></div>
                         <div class="text-center text-2xl text-[var(--primary)]"><i data-lucide="check-circle"></i></div>
                     </div>
                     <div class="grid grid-cols-3 gap-4 md:gap-8 items-center border-t border-[var(--outline)]/50 pt-4">
                         <div class="font-semibold text-base md:text-lg">Curved Mouse Movements</div>
-                        <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i data-lucide="x-circle"></i></div>
+                        <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i
+                                data-lucide="x-circle"></i></div>
                         <div class="text-center text-2xl text-[var(--primary)]"><i data-lucide="check-circle"></i></div>
                     </div>
-                     <div class="grid grid-cols-3 gap-4 md:gap-8 items-center border-t border-[var(--outline)]/50 pt-4">
+                    <div class="grid grid-cols-3 gap-4 md:gap-8 items-center border-t border-[var(--outline)]/50 pt-4">
                         <div class="font-semibold text-base md:text-lg">Adjustable Typo Rate</div>
-                        <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i data-lucide="x-circle"></i></div>
+                        <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i
+                                data-lucide="x-circle"></i></div>
                         <div class="text-center text-2xl text-[var(--primary)]"><i data-lucide="check-circle"></i></div>
                     </div>
                     <div class="grid grid-cols-3 gap-4 md:gap-8 items-center border-t border-[var(--outline)]/50 pt-4">
                         <div class="font-semibold text-base md:text-lg">Custom Bluetooth Name</div>
-                         <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i data-lucide="x-circle"></i></div>
+                        <div class="text-center text-2xl text-[var(--on-surface-variant)]"><i
+                                data-lucide="x-circle"></i></div>
                         <div class="text-center text-2xl text-[var(--primary)]"><i data-lucide="check-circle"></i></div>
                     </div>
                 </div>
@@ -274,24 +392,41 @@
             </div>
             <div class="space-y-6">
                 <div class="bg-[var(--surface)] p-6 rounded-lg scroll-animate">
-                    <h4 class="font-bold text-lg text-[var(--on-surface)] mb-2">Is StayGreen detectable by my employer?</h4>
-                    <p class="text-[var(--on-surface-variant)]">StayGreen simulates a standard Bluetooth Keyboard/Mouse. It does not install any software on your computer, making it appear as a normal hardware device. The pro features add layers of human-like randomness to make the activity indistinguishable from manual use.<span class="block mt-4 text-sm italic opacity-80">Disclaimer: While we've designed StayGreen to be as undetectable as possible, users should be aware of their company's specific policies and use the app at their own risk.</span></p>
+                    <h4 class="font-bold text-lg text-[var(--on-surface)] mb-2">Is StayGreen detectable by my employer?
+                    </h4>
+                    <p class="text-[var(--on-surface-variant)]">StayGreen simulates a standard Bluetooth Keyboard/Mouse.
+                        It does not install any software on your computer, making it appear as a normal hardware device.
+                        The pro features add layers of human-like randomness to make the activity indistinguishable from
+                        manual use.<span class="block mt-4 text-sm italic opacity-80">Disclaimer: While we've designed
+                            StayGreen to be as undetectable as possible, users should be aware of their company's
+                            specific policies and use the app at their own risk.</span></p>
                 </div>
                 <div class="bg-[var(--surface)] p-6 rounded-lg scroll-animate" style="transition-delay: 100ms;">
                     <h4 class="font-bold text-lg text-[var(--on-surface)] mb-2">Will this drain my phone's battery?</h4>
-                    <p class="text-[var(--on-surface-variant)]">No. The app is designed to be highly energy-efficient. It runs as a lightweight background service with a persistent notification, using minimal battery to maintain the Bluetooth connection and send input signals.</p>
+                    <p class="text-[var(--on-surface-variant)]">No. The app is designed to be highly energy-efficient.
+                        It runs as a lightweight background service with a persistent notification, using minimal
+                        battery to maintain the Bluetooth connection and send input signals.</p>
                 </div>
                 <div class="bg-[var(--surface)] p-6 rounded-lg scroll-animate" style="transition-delay: 200ms;">
                     <h4 class="font-bold text-lg text-[var(--on-surface)] mb-2">Do I need to keep the app open?</h4>
-                    <p class="text-[var(--on-surface-variant)]">Once you start the activity, you can let the app run in the background. A notification will show that the service is active, and it will continue to work even if your phone screen is off.</p>
+                    <p class="text-[var(--on-surface-variant)]">Once you start the activity, you can let the app run in
+                        the background. A notification will show that the service is active, and it will continue to
+                        work even if your phone screen is off.</p>
                 </div>
-                 <div class="bg-[var(--surface)] p-6 rounded-lg scroll-animate" style="transition-delay: 300ms;">
+                <div class="bg-[var(--surface)] p-6 rounded-lg scroll-animate" style="transition-delay: 300ms;">
                     <h4 class="font-bold text-lg text-[var(--on-surface)] mb-2">What are text profiles for?</h4>
-                    <p class="text-[var(--on-surface-variant)]">Text profiles allow you to specify what text the app should type. You can add code snippets, notes, or any text you want. The app will randomly select from your saved profiles for its typing activity. Pro users can create unlimited profiles!</p>
+                    <p class="text-[var(--on-surface-variant)]">Text profiles allow you to specify what text the app
+                        should type. You can add code snippets, notes, or any text you want. The app will randomly
+                        select from your saved profiles for its typing activity. Pro users can create unlimited
+                        profiles!</p>
                 </div>
                 <div class="bg-[var(--surface)] p-6 rounded-lg scroll-animate" style="transition-delay: 400ms;">
-                    <h4 class="font-bold text-lg text-[var(--on-surface)] mb-2">How is this different from a physical USB mouse jiggler?</h4>
-                    <p class="text-[var(--on-surface-variant)]">StayGreen offers more control and realism than most physical mouse jigglers. Instead of just nudging the cursor, it uses your phone to send undetectable, human-like inputs via Bluetooth. Plus, you get customizable features like text profiles and adjustable delays, all without occupying a USB port.</p>
+                    <h4 class="font-bold text-lg text-[var(--on-surface)] mb-2">How is this different from a physical
+                        USB mouse jiggler?</h4>
+                    <p class="text-[var(--on-surface-variant)]">StayGreen offers more control and realism than most
+                        physical mouse jigglers. Instead of just nudging the cursor, it uses your phone to send
+                        undetectable, human-like inputs via Bluetooth. Plus, you get customizable features like text
+                        profiles and adjustable delays, all without occupying a USB port.</p>
                 </div>
             </div>
         </div>
@@ -300,8 +435,11 @@
     <section class="gradient-bg">
         <div class="container mx-auto px-6 py-24 text-center scroll-animate">
             <h3 class="text-4xl font-bold text-[var(--on-background)] mb-4">Ready to Take Control?</h3>
-            <p class="text-lg text-[var(--on-surface-variant)] max-w-2xl mx-auto mb-8">Download StayGreen today and say goodbye to unwanted screen locking and yellow status indicators. Boost your productivity and maintain your active status effortlessly.</p>
-            <a href="https://play.google.com/store/apps/details?id=com.shaffer.staygreen" class="bg-[var(--primary)] hover:bg-[var(--on-primary-container)] text-[var(--on-primary)] hover:text-[var(--on-primary)] font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2 text-lg">
+            <p class="text-lg text-[var(--on-surface-variant)] max-w-2xl mx-auto mb-8">Download StayGreen today and say
+                goodbye to unwanted screen locking and yellow status indicators. Boost your productivity and maintain
+                your active status effortlessly.</p>
+            <a href="https://play.google.com/store/apps/details?id=com.shaffer.staygreen"
+                class="bg-[var(--primary)] hover:bg-[var(--on-primary-container)] text-[var(--on-primary)] hover:text-[var(--on-primary)] font-bold py-4 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center space-x-2 text-lg">
                 <i data-lucide="download"></i>
                 <span>Download for Free</span>
             </a>
@@ -334,7 +472,7 @@
                 });
                 return;
             }
-            
+
             // Create the observer
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
@@ -347,7 +485,7 @@
                 });
             }, {
                 // Trigger the animation when the element is 10% visible
-                threshold: 0.1 
+                threshold: 0.1
             });
 
             // Observe each element
@@ -357,4 +495,5 @@
         });
     </script>
 </body>
+
 </html>
